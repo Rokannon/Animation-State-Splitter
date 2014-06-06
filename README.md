@@ -1,4 +1,4 @@
-Animation-Grabber
+Animation-State-Splitter
 =================
 
-Adobe AIR utility to grab animation states from flat frames structure and organize it into separate folders.
+Adobe AIR utility to grab animation states from flat frame structure and organize them into separate folders.

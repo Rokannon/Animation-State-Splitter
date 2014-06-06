@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Animation-State-Splitter</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.flexbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.apollobuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.adobe.flexbuilder.project.apollonature</nature>
+		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[source path] MetalWorksMobileTheme-source</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/Feathers/themes/MetalWorksMobileTheme/source</locationURI>
+		</link>
+		<link>
+			<name>[source path] MinimalDesktopTheme-source</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/Feathers/themes/MinimalDesktopTheme/source</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>
