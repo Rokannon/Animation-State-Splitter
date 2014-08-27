@@ -14,7 +14,6 @@ package main.screen
     import main.data.StateData;
 
     import starling.display.DisplayObject;
-
     import starling.events.Event;
 
     public class StateEditScreen extends PanelScreen

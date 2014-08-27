@@ -6,7 +6,6 @@ package main.screen
     import feathers.layout.VerticalLayout;
 
     import starling.display.DisplayObject;
-
     import starling.events.Event;
 
     public class AboutScreen extends PanelScreen

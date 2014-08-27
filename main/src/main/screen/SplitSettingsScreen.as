@@ -18,7 +18,6 @@ package main.screen
     import main.data.SplitData;
 
     import starling.display.DisplayObject;
-
     import starling.events.Event;
 
     public class SplitSettingsScreen extends PanelScreen
@@ -151,7 +150,6 @@ package main.screen
             {
                 switch (data.label)
                 {
-
                     case ALERT_LABEL_CANCEL:
                         // Do nothing.
 //						LOGGER.info("Alert closed with 'Cancel' button.");
@@ -250,9 +248,7 @@ package main.screen
         [Inline]
         private final function checkContinueButton():void
         {
-
             _continueButton.isEnabled = splitData.imagesPath.length != 0;
-
         }
     }
 }

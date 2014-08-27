@@ -4,12 +4,10 @@ package main.screen
     import com.rokannon.core.utils.string.intToString;
 
     import feathers.controls.Alert;
-
     import feathers.controls.Button;
     import feathers.controls.Header;
     import feathers.controls.Label;
     import feathers.controls.List;
-
     import feathers.controls.PanelScreen;
     import feathers.controls.ProgressBar;
     import feathers.core.IFeathersControl;
@@ -26,7 +24,6 @@ package main.screen
     import main.file.FileSaveHelper;
 
     import starling.display.DisplayObject;
-
     import starling.events.Event;
 
     public class SplitOverviewScreen extends PanelScreen

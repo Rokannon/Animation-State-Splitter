@@ -7,7 +7,6 @@ package main.screen
     import feathers.controls.Button;
     import feathers.controls.Header;
     import feathers.controls.List;
-
     import feathers.controls.PanelScreen;
     import feathers.core.IFeathersControl;
     import feathers.data.ListCollection;
@@ -18,7 +17,6 @@ package main.screen
     import main.data.StateData;
 
     import starling.display.DisplayObject;
-
     import starling.events.Event;
 
     public class SplitLayoutScreen extends PanelScreen
