@@ -3,8 +3,8 @@
   <component name="FlexBuildConfigurationManager" active="submodules">
     <configurations>
       <configuration name="submodules" pure-as="true" output-type="Library" output-file="submodules.swc" output-folder="$MODULE_DIR$/../out/production/submodules">
-        <dependencies target-player="12.0">
-          <sdk name="AIRSDK 14" />
+        <dependencies target-player="15.0">
+          <sdk name="AIRSDK 15" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
@@ -21,7 +21,7 @@
       <sourceFolder url="file://$MODULE_DIR$/feathers/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/feathers/themes/MinimalDesktopTheme/source" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="AIRSDK 14" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="AIRSDK 15" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
