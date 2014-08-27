@@ -31,7 +31,7 @@ package main.screen
 
             headerProperties.title = "About";
             var verticalLayout:VerticalLayout = new VerticalLayout();
-            verticalLayout.padding = 20 * this.dpiScale;
+            verticalLayout.padding = 20;
             layout = verticalLayout;
 
             _text = new Label();
