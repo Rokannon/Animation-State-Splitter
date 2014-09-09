@@ -33,7 +33,7 @@ package main.screen
         private var _list:List;
         private var _deleteButton:Button;
 
-        public override function dispose():void
+        override public function dispose():void
         {
             if (_isInitialized)
             {
@@ -47,7 +47,7 @@ package main.screen
             super.dispose();
         }
 
-        protected override function initialize():void
+        override protected function initialize():void
         {
             super.initialize();
 
@@ -167,8 +167,7 @@ package main.screen
             dispatchEventWith(EVENT_RETURN);
         }
 
-        [Inline]
-        private final function validateName():void
+        private function validateName():void
         {
             _applyButton.isEnabled = _stateData.name.length != 0;
         }

@@ -36,7 +36,7 @@ package main.screen
         private var _moveUpButton:Button;
         private var _moveDownButton:Button;
 
-        public override function dispose():void
+        override public function dispose():void
         {
             if (_isInitialized)
             {
@@ -49,7 +49,7 @@ package main.screen
             super.dispose();
         }
 
-        protected override function initialize():void
+        override protected function initialize():void
         {
             super.initialize();
 
@@ -167,8 +167,7 @@ package main.screen
             _list.selectedIndex = newIndex;
         }
 
-        [Inline]
-        private final function updateButtons():void
+        private function updateButtons():void
         {
             _continueButton.isEnabled = splitData.stateDatas.length > 0;
             _editButton.isEnabled = _list.selectedIndex >= 0;
@@ -176,8 +175,7 @@ package main.screen
             _moveDownButton.isEnabled = _list.selectedIndex >= 0 && splitData.stateDatas.length > 1 && _list.selectedIndex < splitData.stateDatas.length - 1;
         }
 
-        [Inline]
-        private final function updateList():void
+        private function updateList():void
         {
             var items:Array = new Array();
             var length:uint = splitData.stateDatas.length;

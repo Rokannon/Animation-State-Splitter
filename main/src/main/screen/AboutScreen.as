@@ -15,7 +15,7 @@ package main.screen
         private var _text:Label;
         private var _backButton:Button;
 
-        public override function dispose():void
+        override public function dispose():void
         {
             if (_isInitialized)
             {
@@ -24,7 +24,7 @@ package main.screen
             super.dispose();
         }
 
-        protected override function initialize():void
+        override protected function initialize():void
         {
             super.initialize();
 

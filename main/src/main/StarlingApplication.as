@@ -4,7 +4,7 @@ package main
     import feathers.controls.ScreenNavigator;
     import feathers.controls.ScreenNavigatorItem;
     import feathers.core.PopUpManager;
-    import feathers.themes.MinimalDesktopTheme;
+    import feathers.themes.MetalWorksDesktopTheme;
 
     import flash.filesystem.File;
 
@@ -45,7 +45,7 @@ package main
         {
             var events:Object;
 
-            new MinimalDesktopTheme();
+            new MetalWorksDesktopTheme();
 
             _navigator = new ScreenNavigator();
 
@@ -129,8 +129,7 @@ package main
             onBrowsingComplete(event);
         }
 
-        [Inline]
-        private final function onBrowsingComplete(event:Event):void
+        private function onBrowsingComplete(event:Event):void
         {
             event.target.removeEventListener(FileLoadHelper.EVENT_COMPLETE, fileLoadHelper_completeHandler);
             event.target.removeEventListener(FileLoadHelper.EVENT_ABORT, fileLoadHelper_abortHandler);

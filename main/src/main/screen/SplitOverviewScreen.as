@@ -44,7 +44,7 @@ package main.screen
         private var _workingLabel:Label;
         private var _progressBar:ProgressBar;
 
-        public override function dispose():void
+        override public function dispose():void
         {
             if (_isInitialized)
             {
@@ -55,7 +55,7 @@ package main.screen
             super.dispose();
         }
 
-        protected override function initialize():void
+        override protected function initialize():void
         {
             super.initialize();
 
@@ -246,8 +246,7 @@ package main.screen
             onSaveEnd(event);
         }
 
-        [Inline]
-        private final function onSaveEnd(event:Event):void
+        private function onSaveEnd(event:Event):void
         {
             PopUpManager.removePopUp(_workingLabel, true);
             _workingLabel = null;

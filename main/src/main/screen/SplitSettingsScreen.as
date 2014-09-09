@@ -43,7 +43,7 @@ package main.screen
         private var _suffixFilterInput:TextInput;
         private var _verifyingLabel:Label;
 
-        public override function dispose():void
+        override public function dispose():void
         {
             if (_isInitialized)
             {
@@ -56,7 +56,7 @@ package main.screen
             super.dispose();
         }
 
-        protected override function initialize():void
+        override protected function initialize():void
         {
             super.initialize();
 
@@ -239,14 +239,12 @@ package main.screen
                                                             ]));
         }
 
-        [inline]
-        private final function suffixCheck(string:String, suffix:String):Boolean
+        private function suffixCheck(string:String, suffix:String):Boolean
         {
             return string.lastIndexOf(suffix) == string.length - suffix.length;
         }
 
-        [Inline]
-        private final function checkContinueButton():void
+        private function checkContinueButton():void
         {
             _continueButton.isEnabled = splitData.imagesPath.length != 0;
         }
