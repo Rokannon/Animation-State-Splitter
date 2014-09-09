@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="Feathers">
+    <configurations>
+      <configuration name="Feathers" pure-as="true" output-type="Library" output-file="Feathers.swc" output-folder="$MODULE_DIR$/../out/production/Feathers">
+        <dependencies target-player="12.0">
+          <entries>
+            <entry module-name="Starling-Framework" build-configuration-name="Starling-Framework">
+              <dependency linkage="External" />
+            </entry>
+          </entries>
+          <sdk name="AIRSDK 14" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/Feathers">
+      <sourceFolder url="file://$MODULE_DIR$/Feathers/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Feathers/themes/MinimalMobileTheme/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Feathers/themes/MinimalDesktopTheme/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Feathers/themes/MetalWorksMobileTheme/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Feathers/themes/MetalWorksDesktopTheme/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Feathers/themes/AeonDesktopTheme/source" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="AIRSDK 14" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Starling-Framework" exported="" />
+  </component>
+</module>
+

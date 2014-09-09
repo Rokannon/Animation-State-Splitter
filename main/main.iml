@@ -5,7 +5,10 @@
       <configuration name="main" target-platform="Desktop" pure-as="true" main-class="Main" output-file="main.swf" output-folder="$MODULE_DIR$/../out/production/main">
         <dependencies target-player="12.0">
           <entries>
-            <entry module-name="submodules" build-configuration-name="submodules">
+            <entry module-name="Feathers" build-configuration-name="Feathers">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry module-name="Starling-Framework" build-configuration-name="Starling-Framework">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -30,7 +33,8 @@
     </content>
     <orderEntry type="jdk" jdkName="AIRSDK 15" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="submodules" exported="" />
+    <orderEntry type="module" module-name="Feathers" exported="" />
+    <orderEntry type="module" module-name="Starling-Framework" exported="" />
   </component>
 </module>
 
