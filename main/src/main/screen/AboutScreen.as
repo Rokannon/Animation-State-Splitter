@@ -34,7 +34,14 @@ package main.screen
             layout = verticalLayout;
 
             _text = new Label();
-            _text.text = "Animation State Splitter v1.0 created by Vladimir Atamanov";
+            _text.text =
+                "Animation State Splitter v1.1 created by Vladimir Atamanov\n" +
+                "\n" +
+                "## 1.1\n" +
+                "- Added support for opening .spl files.\n" +
+                "\n" +
+                "## 1.0\n" +
+                "- First stable release.\n";
             addChild(_text);
 
             _backButton = new Button();
