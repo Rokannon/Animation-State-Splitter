@@ -95,7 +95,6 @@ package main
             addChild(_navigator);
             _navigator.showScreen(SCREEN_MAIN_MENU);
 
-            splitAddress = "R:\\Dropbox\\split_data.spl";
             if (splitAddress != null)
             {
                 _browsingLabel.text = "Loading: " + splitAddress + "...";
