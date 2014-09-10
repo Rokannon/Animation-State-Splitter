@@ -1,14 +1,17 @@
 package main
 {
+    import feathers.controls.Alert;
     import feathers.controls.Label;
     import feathers.controls.ScreenNavigator;
     import feathers.controls.ScreenNavigatorItem;
     import feathers.core.PopUpManager;
+    import feathers.data.ListCollection;
     import feathers.themes.MetalWorksDesktopTheme;
 
     import flash.filesystem.File;
 
     import main.data.SplitData;
+    import main.file.FileBrowseHelper;
     import main.file.FileLoadHelper;
     import main.screen.AboutScreen;
     import main.screen.MainMenuScreen;
@@ -34,14 +37,14 @@ package main
         private const _files:Vector.<File> = new Vector.<File>();
 
         private var _navigator:ScreenNavigator;
-        private var _browsingLabel:Label;
+        private const _browsingLabel:Label = new Label();
 
         public function StarlingApplication()
         {
             super();
         }
 
-        public function launch():void
+        public function launch(splitAddress:String = null):void
         {
             var events:Object;
 
@@ -91,6 +94,36 @@ package main
 
             addChild(_navigator);
             _navigator.showScreen(SCREEN_MAIN_MENU);
+
+            splitAddress = "R:\\Dropbox\\split_data.spl";
+            if (splitAddress != null)
+            {
+                _browsingLabel.text = "Loading: " + splitAddress + "...";
+                PopUpManager.addPopUp(_browsingLabel);
+                var splitFile:File = new File(splitAddress);
+                var fileLoadHelper:FileLoadHelper = new FileLoadHelper(splitFile);
+                fileLoadHelper.addEventListener(FileLoadHelper.EVENT_COMPLETE, fileLoadHelper_completeHandler);
+                fileLoadHelper.addEventListener(FileLoadHelper.EVENT_ERROR, fileLoadHelper_errorHandler);
+                fileLoadHelper.load();
+            }
+        }
+
+        private function fileLoadHelper_completeHandler(event:Event):void
+        {
+            PopUpManager.removePopUp(_browsingLabel, true);
+            var fileLoadHelper:FileLoadHelper = event.target as FileLoadHelper;
+            _splitData.initFromJSON(JSON.parse(fileLoadHelper.getContent()));
+            _navigator.showScreen(SCREEN_SPLIT_SETTINGS);
+        }
+
+        private function fileLoadHelper_errorHandler(event:Event):void
+        {
+            PopUpManager.removePopUp(_browsingLabel, true);
+            Alert.show("Error opening file: ", "Error", new ListCollection([
+                                                                               {
+                                                                                   label: "OK"
+                                                                               }
+                                                                           ]));
         }
 
         private function createNewSplit():void
@@ -99,43 +132,37 @@ package main
             _splitData.suffixFilter = ".png";
             _splitData.addStatePrefix = true;
             _splitData.stateDatas.length = 0;
-
             _navigator.showScreen(SCREEN_SPLIT_SETTINGS);
         }
 
         private function loadSplit():void
         {
-            _browsingLabel = new Label();
             _browsingLabel.text = "Browsing...";
             PopUpManager.addPopUp(_browsingLabel);
-
-            var fileLoadHelper:FileLoadHelper = new FileLoadHelper();
-            fileLoadHelper.addEventListener(FileLoadHelper.EVENT_COMPLETE, fileLoadHelper_completeHandler);
-            fileLoadHelper.addEventListener(FileLoadHelper.EVENT_ABORT, fileLoadHelper_abortHandler);
-            fileLoadHelper.browse();
+            var fileBrowseHelper:FileBrowseHelper = new FileBrowseHelper();
+            fileBrowseHelper.addEventListener(FileBrowseHelper.EVENT_COMPLETE, fileBrowseHelper_completeHandler);
+            fileBrowseHelper.addEventListener(FileBrowseHelper.EVENT_ABORT, fileBrowseHelper_abortHandler);
+            fileBrowseHelper.browse();
         }
 
-        private function fileLoadHelper_completeHandler(event:Event):void
+        private function fileBrowseHelper_completeHandler(event:Event):void
         {
             onBrowsingComplete(event);
-
-            var fileLoadHelper:FileLoadHelper = event.target as FileLoadHelper;
-            _splitData.initFromJSON(JSON.parse(fileLoadHelper.getContent()));
+            var fileBrowseHelper:FileBrowseHelper = event.target as FileBrowseHelper;
+            _splitData.initFromJSON(JSON.parse(fileBrowseHelper.getContent()));
             _navigator.showScreen(SCREEN_SPLIT_SETTINGS);
         }
 
-        private function fileLoadHelper_abortHandler(event:Event):void
+        private function fileBrowseHelper_abortHandler(event:Event):void
         {
             onBrowsingComplete(event);
         }
 
         private function onBrowsingComplete(event:Event):void
         {
-            event.target.removeEventListener(FileLoadHelper.EVENT_COMPLETE, fileLoadHelper_completeHandler);
-            event.target.removeEventListener(FileLoadHelper.EVENT_ABORT, fileLoadHelper_abortHandler);
-
+            event.target.removeEventListener(FileBrowseHelper.EVENT_COMPLETE, fileBrowseHelper_completeHandler);
+            event.target.removeEventListener(FileBrowseHelper.EVENT_ABORT, fileBrowseHelper_abortHandler);
             PopUpManager.removePopUp(_browsingLabel, true);
-            _browsingLabel = null;
         }
     }
 }

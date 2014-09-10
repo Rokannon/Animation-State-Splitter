@@ -2,63 +2,48 @@ package main.file
 {
     import flash.events.Event;
     import flash.events.IOErrorEvent;
-    import flash.net.FileReference;
+    import flash.filesystem.File;
 
     import starling.events.EventDispatcher;
 
     public class FileLoadHelper extends EventDispatcher
     {
         public static const EVENT_COMPLETE:String = "eventComplete";
-        public static const EVENT_ABORT:String = "eventAbort";
+        public static const EVENT_ERROR:String = "eventError";
 
-        private const _fileReference:FileReference = new FileReference();
+        private var _file:File;
 
-        public function FileLoadHelper()
+        public function FileLoadHelper(file:File)
         {
             super();
 
-            _fileReference.addEventListener(Event.COMPLETE, onFileReferenceComplete);
-            _fileReference.addEventListener(Event.SELECT, onFileReferenceSelect);
-            _fileReference.addEventListener(Event.CANCEL, onFileReferenceCancel);
-            _fileReference.addEventListener(IOErrorEvent.IO_ERROR, onFileReferenceIOError);
+            _file = file;
+            _file.addEventListener(Event.COMPLETE, onComplete);
+            _file.addEventListener(IOErrorEvent.IO_ERROR, onError);
+        }
+
+        public function load():void
+        {
+            _file.load();
         }
 
         public function getContent():String
         {
-            return _fileReference.data.readUTFBytes(_fileReference.data.bytesAvailable);
+            return _file.data.toString();
         }
 
-        public function browse():void
+        private function onComplete(event:Event):void
         {
-            _fileReference.browse();
-        }
-
-        public function dispose():void
-        {
-            _fileReference.removeEventListener(Event.COMPLETE, onFileReferenceComplete);
-            _fileReference.removeEventListener(Event.SELECT, onFileReferenceSelect);
-            _fileReference.removeEventListener(Event.CANCEL, onFileReferenceCancel);
-            _fileReference.removeEventListener(IOErrorEvent.IO_ERROR, onFileReferenceIOError);
-        }
-
-        private function onFileReferenceComplete(event:Event):void
-        {
+            _file.removeEventListener(Event.COMPLETE, onComplete);
+            _file.removeEventListener(IOErrorEvent.IO_ERROR, onError);
             dispatchEventWith(EVENT_COMPLETE);
         }
 
-        private function onFileReferenceSelect(event:Event):void
+        private function onError(event:IOErrorEvent):void
         {
-            _fileReference.load();
-        }
-
-        private function onFileReferenceCancel(event:Event):void
-        {
-            dispatchEventWith(EVENT_ABORT);
-        }
-
-        private function onFileReferenceIOError(event:IOErrorEvent):void
-        {
-            dispatchEventWith(EVENT_ABORT);
+            _file.removeEventListener(Event.COMPLETE, onComplete);
+            _file.removeEventListener(IOErrorEvent.IO_ERROR, onError);
+            dispatchEventWith(EVENT_ERROR);
         }
     }
 }
