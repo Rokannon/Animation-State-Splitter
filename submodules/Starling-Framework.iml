@@ -3,10 +3,14 @@
   <component name="FlexBuildConfigurationManager" active="Starling-Framework">
     <configurations>
       <configuration name="Starling-Framework" pure-as="true" output-type="Library" output-file="Starling-Framework.swc" output-folder="$MODULE_DIR$/../out/production/Starling-Framework">
-        <dependencies target-player="12.0">
-          <sdk name="AIRSDK 14" />
+        <dependencies target-player="15.0">
+          <sdk name="AIRSDK 15" />
         </dependencies>
-        <compiler-options />
+        <compiler-options>
+          <map>
+            <entry key="compiler.debug.swc" value="true" />
+          </map>
+        </compiler-options>
         <packaging-air-desktop />
         <packaging-android />
         <packaging-ios />
@@ -19,7 +23,7 @@
     <content url="file://$MODULE_DIR$/Starling-Framework">
       <sourceFolder url="file://$MODULE_DIR$/Starling-Framework/starling/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="AIRSDK 14" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="AIRSDK 15" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
