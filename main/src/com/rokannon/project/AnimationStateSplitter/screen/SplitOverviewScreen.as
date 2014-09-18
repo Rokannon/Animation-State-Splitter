@@ -1,7 +1,11 @@
-package main.screen
+package com.rokannon.project.AnimationStateSplitter.screen
 {
     import com.rokannon.core.utils.callOutStack;
     import com.rokannon.core.utils.string.intToString;
+    import com.rokannon.project.AnimationStateSplitter.data.SplitData;
+    import com.rokannon.project.AnimationStateSplitter.data.StateData;
+    import com.rokannon.project.AnimationStateSplitter.file.FileCopyHelper;
+    import com.rokannon.project.AnimationStateSplitter.file.FileSaveHelper;
 
     import feathers.controls.Alert;
     import feathers.controls.Button;
@@ -17,11 +21,6 @@ package main.screen
     import feathers.layout.AnchorLayoutData;
 
     import flash.filesystem.File;
-
-    import main.data.SplitData;
-    import main.data.StateData;
-    import main.file.FileCopyHelper;
-    import main.file.FileSaveHelper;
 
     import starling.display.DisplayObject;
     import starling.events.Event;

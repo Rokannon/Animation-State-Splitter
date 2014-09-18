@@ -1,5 +1,7 @@
-package main.screen
+package com.rokannon.project.AnimationStateSplitter.screen
 {
+    import com.rokannon.project.AnimationStateSplitter.data.SplitData;
+
     import feathers.controls.Alert;
     import feathers.controls.Button;
     import feathers.controls.Label;
@@ -14,8 +16,6 @@ package main.screen
 
     import flash.events.FileListEvent;
     import flash.filesystem.File;
-
-    import main.data.SplitData;
 
     import starling.display.DisplayObject;
     import starling.events.Event;

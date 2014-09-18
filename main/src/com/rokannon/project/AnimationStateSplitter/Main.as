@@ -1,4 +1,4 @@
-package
+package com.rokannon.project.AnimationStateSplitter
 {
     import feathers.system.DeviceCapabilities;
 
@@ -7,8 +7,6 @@ package
     import flash.display.StageAlign;
     import flash.display.StageScaleMode;
     import flash.events.InvokeEvent;
-
-    import main.StarlingApplication;
 
     import starling.core.Starling;
     import starling.events.Event;

@@ -1,4 +1,4 @@
-package main.screen
+package com.rokannon.project.AnimationStateSplitter.screen
 {
     import feathers.controls.ButtonGroup;
     import feathers.controls.PanelScreen;

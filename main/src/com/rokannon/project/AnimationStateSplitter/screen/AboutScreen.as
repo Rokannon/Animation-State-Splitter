@@ -1,4 +1,4 @@
-package main.screen
+package com.rokannon.project.AnimationStateSplitter.screen
 {
     import feathers.controls.Button;
     import feathers.controls.Label;
@@ -34,6 +34,7 @@ package main.screen
             layout = verticalLayout;
 
             _text = new Label();
+            // @formatter:off
             _text.text =
                 "Animation State Splitter v1.1 created by Vladimir Atamanov\n" +
                 "\n" +
@@ -42,6 +43,7 @@ package main.screen
                 "\n" +
                 "## 1.0\n" +
                 "- First stable release.\n";
+            // @formatter:on
             addChild(_text);
 
             _backButton = new Button();

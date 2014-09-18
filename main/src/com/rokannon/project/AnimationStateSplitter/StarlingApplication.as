@@ -1,5 +1,15 @@
-package main
+package com.rokannon.project.AnimationStateSplitter
 {
+    import com.rokannon.project.AnimationStateSplitter.data.SplitData;
+    import com.rokannon.project.AnimationStateSplitter.file.FileBrowseHelper;
+    import com.rokannon.project.AnimationStateSplitter.file.FileLoadHelper;
+    import com.rokannon.project.AnimationStateSplitter.screen.AboutScreen;
+    import com.rokannon.project.AnimationStateSplitter.screen.MainMenuScreen;
+    import com.rokannon.project.AnimationStateSplitter.screen.SplitLayoutScreen;
+    import com.rokannon.project.AnimationStateSplitter.screen.SplitOverviewScreen;
+    import com.rokannon.project.AnimationStateSplitter.screen.SplitSettingsScreen;
+    import com.rokannon.project.AnimationStateSplitter.screen.StateEditScreen;
+
     import feathers.controls.Alert;
     import feathers.controls.Label;
     import feathers.controls.ScreenNavigator;
@@ -9,16 +19,6 @@ package main
     import feathers.themes.MetalWorksDesktopTheme;
 
     import flash.filesystem.File;
-
-    import main.data.SplitData;
-    import main.file.FileBrowseHelper;
-    import main.file.FileLoadHelper;
-    import main.screen.AboutScreen;
-    import main.screen.MainMenuScreen;
-    import main.screen.SplitLayoutScreen;
-    import main.screen.SplitOverviewScreen;
-    import main.screen.SplitSettingsScreen;
-    import main.screen.StateEditScreen;
 
     import starling.display.Sprite;
     import starling.events.Event;

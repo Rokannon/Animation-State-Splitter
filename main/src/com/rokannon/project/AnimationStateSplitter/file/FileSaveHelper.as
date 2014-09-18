@@ -1,4 +1,4 @@
-package main.file
+package com.rokannon.project.AnimationStateSplitter.file
 {
     import flash.events.Event;
     import flash.events.IOErrorEvent;

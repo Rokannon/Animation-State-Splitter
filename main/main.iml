@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="main">
     <configurations>
-      <configuration name="main" target-platform="Desktop" pure-as="true" main-class="Main" output-file="main.swf" output-folder="$MODULE_DIR$/../out/production/main">
+      <configuration name="main" target-platform="Desktop" pure-as="true" main-class="com.rokannon.project.AnimationStateSplitter.Main" output-file="main.swf" output-folder="$MODULE_DIR$/../out/production/main">
         <dependencies target-player="12.0">
           <entries>
             <entry module-name="Feathers" build-configuration-name="Feathers">

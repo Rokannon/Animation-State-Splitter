@@ -1,5 +1,8 @@
-package main.screen
+package com.rokannon.project.AnimationStateSplitter.screen
 {
+    import com.rokannon.project.AnimationStateSplitter.data.SplitData;
+    import com.rokannon.project.AnimationStateSplitter.data.StateData;
+
     import feathers.controls.Button;
     import feathers.controls.Header;
     import feathers.controls.List;
@@ -9,9 +12,6 @@ package main.screen
     import feathers.data.ListCollection;
     import feathers.layout.AnchorLayout;
     import feathers.layout.AnchorLayoutData;
-
-    import main.data.SplitData;
-    import main.data.StateData;
 
     import starling.display.DisplayObject;
     import starling.events.Event;

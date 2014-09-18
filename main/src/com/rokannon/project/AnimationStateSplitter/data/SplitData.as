@@ -1,4 +1,4 @@
-package main.data
+package com.rokannon.project.AnimationStateSplitter.data
 {
     import com.rokannon.core.utils.requireProperty;
 
